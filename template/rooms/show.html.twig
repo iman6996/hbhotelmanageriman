@@ -11,6 +11,7 @@ Gestionnaire d'hôtels Hb-HotelManager
     <i class="fa fa-arrow-left" aria-hidden="true"></i> retour à la liste
 </a>
 <!-- CAS 1 : La chambre est innoccupée -->
+{% if %}
 <div class="card mb-3">
     <div class="card-header">
         <strong>Gestion de la chambre # {{room.number}}</strong> <span class="badge badge-success">Libre</span>

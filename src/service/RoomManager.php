@@ -28,6 +28,8 @@ class RoomManager extends AbstractManager implements ManagerInterface
         $room->setClientId($array['client_id']);
 
         // $room->setClient(); // à faire
+        $client = $this->container->getClientManager()->findOneById($array['client_id']);
+        $room->setClient($client);
 
         return $room;
     }
