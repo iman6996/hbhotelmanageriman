@@ -11,12 +11,14 @@
         {{client.id}}<br>
         {{client.lastname}} {{client.firstname}}
         <br>
-        {{client.entryDate}}
+        <h6 class="text-success">Date d'entrée</h6>
+        {{client.entry_date}}
         <br>
-        {{client.DepartureDate}}
+        <h6 class="text-success">Date de sortie</h6>
+        {{client.departure_date}}
         <br>
-        <a href=""><i class="fa fa-pencil btn btn-warning p-2 my-2" aria-hidden="true"></i></a>
-        <a href=""><i class="fa fa-trash-o btn btn-danger p-2 m-2" aria-hidden="true"></i></a>
+        <a href="{{env.base_path}}/clients/edit/{{client.id}}"><i class="fa fa-pencil btn btn-warning p-2 my-2" aria-hidden="true"></i></a>
+        <a href="{{env.base_path}}/clients/delete/{{client.id}}"><i class="fa fa-trash-o btn btn-danger p-2 m-2" aria-hidden="true"></i></a>
         <hr>
     </li>
     {% endfor %}

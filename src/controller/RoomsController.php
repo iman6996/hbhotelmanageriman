@@ -17,4 +17,14 @@ class RoomsController extends AbstractController {
             'room' => $room
         ]);
     }
+    public function new()
+    {
+        echo $this->container->getTwig()->render('rooms/new.html.twig');
+    }
+
+    public function create()
+    {
+        $this->container->getRoomManager()->create($_POST);
+        header('Location: ' . $this->config['env']['base_path']);
+    }
 }

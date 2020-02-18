@@ -1,10 +1,12 @@
-<?php 
+<?php
+
 namespace App\Service;
 
 use App\Model\Client;
 use PDO;
 
-class ClientManager extends AbstractManager implements ManagerInterface {
+class ClientManager extends AbstractManager implements ManagerInterface
+{
 
     private $pdo;
 
@@ -24,10 +26,8 @@ class ClientManager extends AbstractManager implements ManagerInterface {
         $client->setId($array['id']);
         $client->setFirstname($array['firstname']);
         $client->setLastname($array['lastname']);
-        $client->setEntryDate($array['entry_date']);
-        $client->setDepartureDate($array['departure_date']);
-        
-        // $client->setClient(); // à faire
+        $client->setEntry_date($array['entry_date']);
+        $client->setDeparture_date($array['departure_date']);
 
         return $client;
     }
@@ -45,7 +45,7 @@ class ClientManager extends AbstractManager implements ManagerInterface {
 
         $clients = [];
 
-        foreach($data as $d) {
+        foreach ($data as $d) {
             $clients[] = $this->arrayToObject($d);
         }
 
@@ -81,41 +81,43 @@ class ClientManager extends AbstractManager implements ManagerInterface {
     /**
      * @param 
      */
-    public function create() {
-        $query = "INSERT INTO user(firstname,lastname,entry_date ,departure_date) 
+    public function create(array $data)
+    {
+        $query = "INSERT INTO client(firstname,lastname,entry_date ,departure_date) 
         VALUES(:firstname , :lastname, :entry_date , :departure_date )";
         $statement = $this->pdo->prepare($query);
         $statement->execute([
-            'fistname' => $_POST['firstname'],
-            'lastname' => $_POST['lastname'],
-            'entryDate' => $_POST['entryDate'],
-            'departureDate' => $_POST['departureDate'],
+            'firstname' => $data['firstname'],
+            'lastname' => $data['lastname'],
+            'entry_date' => $data['entry_date'],
+            'departure_date' => $data['departure_date'],
         ]);
     }
-}
+
 
     /**
      * @param array $data
      */
-    /* public function update(int $id, array $data)
+    public function update(int $id, array $data)
     {
-        $query = "UPDATE room SET number = :number, client_id = :client_id WHERE id = :id";
-
+        $query = "UPDATE client SET firstname = :firstname, lastname = :lastname, entry_date = :entry_date ,departure_date = :departure_date WHERE id = :id";
         $statement = $this->pdo->prepare($query);
         $statement->execute([
             'id' => $id,
-            'number' => $data['number'],
-            'client_id'  => $data['client_id']
-        ]);
+            'firstname'  => $data['firstname'],
+            'lastname' => $data['lastname'],
+            'entry_date' => $data['entry_date'],
+            'departure_date' => $data['departure_date'],
 
+        ]);
     }
 
-    public function delete(int $id) {
-        $query = "DELETE FROM room WHERE id = :id";
-
+    public function delete(int $id)
+    {
+        $query = "DELETE FROM client WHERE id = :id";
         $statement = $this->pdo->prepare($query);
         $statement->execute([
             'id' => $id,
         ]);
     }
-} */
+}

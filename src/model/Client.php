@@ -6,8 +6,8 @@ class Client {
     private $id;
     private $firstname;
     private $lastname;
-    private $entryDate;
-    private $departureDate;
+    private $entry_date;
+    private $departure_date;
     //private $room
 
 
@@ -76,9 +76,9 @@ class Client {
     /**
      * Get the value of entryDate
      */ 
-    public function getEntryDate()
+    public function getEntry_date()
     {
-        return $this->entryDate;
+        return $this->entry_date;
     }
 
     /**
@@ -86,9 +86,9 @@ class Client {
      *
      * @return  self
      */ 
-    public function setEntryDate($entryDate)
+    public function setEntry_date($entry_date)
     {
-        $this->entryDate = $entryDate;
+        $this->entry_date = $entry_date;
 
         return $this;
     }
@@ -96,9 +96,9 @@ class Client {
     /**
      * Get the value of depatureDate
      */ 
-    public function getDepartureDate()
+    public function getDeparture_date()
     {
-        return $this->departureDate;
+        return $this->departure_date;
     }
 
     /**
@@ -106,9 +106,9 @@ class Client {
      *
      * @return  self
      */ 
-    public function setDepartureDate($departureDate)
+    public function setDeparture_date($departure_date)
     {
-        $this->departureDate = $departureDate;
+        $this->departure_date = $departure_date;
 
         return $this;
     }

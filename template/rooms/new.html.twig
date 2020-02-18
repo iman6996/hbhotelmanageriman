@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+{% block title %}
+Ajout de Chambres
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Formulaires nouveau client</h1>
+    <form action="{{env.base_path}}/rooms/new/" method="POST">
+        <div class="form-group">
+            <div class="col">
+                <div>Numéro de la nouvelle Chambre</div>
+                <input id="formNumber" name="number" type="number" class="form-control" placeholder="N° de la Chambre">
+            </div>
+            <br>
+            <a href="{{env.base_path}}" class="btn btn-success">Enregister</a>
+    </form>
+</div>
+{% endblock  %}
