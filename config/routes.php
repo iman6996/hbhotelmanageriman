@@ -1,5 +1,7 @@
 <?php
 
+use App\Controller\ClientsController;
+
 $router = $container->getRouter();
 $router->setNamespace('App\Controller');
 
@@ -16,6 +18,9 @@ $router->get('/rooms/(\d+)', 'RoomsController@show'); // Affichage de 1 room
 /**
  * Routes CLIENT
  */
-$router->get('/clients/' , 'ClientsController@show');
+$router->get('/clients', 'ClientsController@show');
+
+$router->get('/clients/new/','ClientsController@new');
+
 
 $router->run();
