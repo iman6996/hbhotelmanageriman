@@ -7,7 +7,7 @@ class Client {
     private $firstname;
     private $lastname;
     private $entryDate;
-    private $depatureDate;
+    private $departureDate;
     //private $room
 
 
@@ -96,9 +96,9 @@ class Client {
     /**
      * Get the value of depatureDate
      */ 
-    public function getDepatureDate()
+    public function getDepartureDate()
     {
-        return $this->depatureDate;
+        return $this->departureDate;
     }
 
     /**
@@ -106,9 +106,9 @@ class Client {
      *
      * @return  self
      */ 
-    public function setDepatureDate($depatureDate)
+    public function setDepartureDate($departureDate)
     {
-        $this->depatureDate = $depatureDate;
+        $this->departureDate = $departureDate;
 
         return $this;
     }

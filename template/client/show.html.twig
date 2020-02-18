@@ -3,16 +3,23 @@
 {% block title %} Gestionnaire de client {% endblock %}
 
 {% block content %}
-<h1>Listes des clients </h1>
+<h1 class=" text-center">Listes des clients </h1>
+<a href="{{env.base_path}}/clients/new/"><i class="fa fa-plus btn btn-primary m-5 " aria-hidden="true"> Ajouter</i></a>
 <ul>
     {% for client in clients %}
     <li>
         {{client.id}}<br>
         {{client.lastname}} {{client.firstname}}
-        br
+        <br>
         {{client.entryDate}}
+        <br>
+        {{client.DepartureDate}}
+        <br>
+        <a href=""><i class="fa fa-pencil btn btn-warning p-2 my-2" aria-hidden="true"></i></a>
+        <a href=""><i class="fa fa-trash-o btn btn-danger p-2 m-2" aria-hidden="true"></i></a>
         <hr>
     </li>
     {% endfor %}
 </ul>
+
 {% endblock %}

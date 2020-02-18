@@ -16,4 +16,9 @@ class ClientsController extends AbstractController
             'clients' => $clients
         ]);
     }
+
+    public function new()
+    {
+        echo $this->container->getTwig()->render('client/new.html.twig');
+    }
 }

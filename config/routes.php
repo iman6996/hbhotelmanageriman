@@ -21,6 +21,6 @@ $router->get('/rooms/(\d+)', 'RoomsController@show'); // Affichage de 1 room
 $router->get('/clients', 'ClientsController@show');
 
 $router->get('/clients/new/','ClientsController@new');
-
+$router->post('clients/', 'ClientsController@create' );
 
 $router->run();

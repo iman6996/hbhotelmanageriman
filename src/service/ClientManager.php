@@ -25,7 +25,7 @@ class ClientManager extends AbstractManager implements ManagerInterface {
         $client->setFirstname($array['firstname']);
         $client->setLastname($array['lastname']);
         $client->setEntryDate($array['entry_date']);
-        $client->setDepatureDate($array['departure_date']);
+        $client->setDepartureDate($array['departure_date']);
         
         // $client->setClient(); // à faire
 
@@ -79,14 +79,17 @@ class ClientManager extends AbstractManager implements ManagerInterface {
     }
 
     /**
-     * @param array $data
+     * @param 
      */
-    public function create(array $data) {
-        $query = "INSERT INTO room(number) VALUES(:number)";
-
+    public function create() {
+        $query = "INSERT INTO user(firstname,lastname,entry_date ,departure_date) 
+        VALUES(:firstname , :lastname, :entry_date , :departure_date )";
         $statement = $this->pdo->prepare($query);
         $statement->execute([
-            'number' => $data['number'],
+            'fistname' => $_POST['firstname'],
+            'lastname' => $_POST['lastname'],
+            'entryDate' => $_POST['entryDate'],
+            'departureDate' => $_POST['departureDate'],
         ]);
     }
 }
