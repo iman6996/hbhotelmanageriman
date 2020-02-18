@@ -16,6 +16,6 @@ $router->get('/rooms/(\d+)', 'RoomsController@show'); // Affichage de 1 room
 /**
  * Routes CLIENT
  */
-
+$router->get('/clients/' , 'ClientsController@show');
 
 $router->run();
