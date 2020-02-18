@@ -83,6 +83,7 @@ class RoomManager extends AbstractManager implements ManagerInterface
      */
     public function create(array $data)
     {
+        
         $query = "INSERT INTO room(number)
                     VALUES (:number)";
 
@@ -90,6 +91,7 @@ class RoomManager extends AbstractManager implements ManagerInterface
         $statement->execute([
             'number' => $data['number'],
         ]);
+        $statement->debugDumpParams();
     }
 
     /**

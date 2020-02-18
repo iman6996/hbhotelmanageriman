@@ -2,13 +2,15 @@
 
 namespace App\Controller;
 
-class RoomsController extends AbstractController {
+class RoomsController extends AbstractController
+{
 
     /**
      * Afficher la page de 1 room
      * Route: GET /rooms/:id
      */
-    public function show(int $id) {
+    public function show(int $id)
+    {
         // 1. Récupérer le car par son id
         $room = $this->container->getRoomManager()->findOneById($id);
 
@@ -24,7 +26,8 @@ class RoomsController extends AbstractController {
 
     public function create()
     {
+
         $this->container->getRoomManager()->create($_POST);
-        header('Location: ' . $this->config['env']['base_path']);
+        header('Location: ' . $this->configuration['env']['base_path']);
     }
 }

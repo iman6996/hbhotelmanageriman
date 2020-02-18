@@ -16,7 +16,7 @@ $router->get('', 'PagesController@index'); // Page d'accueil contenant entre aut
 $router->get('/rooms/(\d+)', 'RoomsController@show');// Affichage de 1 room
 
 $router->get('/rooms/new/', 'RoomsController@new'); 
-$router->post('rooms/', 'RoomsController@create');
+$router->post('/rooms/create', 'RoomsController@create');
 
 /**
  * Routes CLIENT
